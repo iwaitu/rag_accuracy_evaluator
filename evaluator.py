@@ -6,7 +6,7 @@ import glob
 from openai_helpers import generate_questions_and_answers, ask_gpt_judgment
 from utils import get_embedding, calculate_cosine_similarity
 from report import generate_html_report
-from uploaders import default_uploader
+from interfacehelper import default_uploader
 
 class RAGEvaluator:
     def __init__(self, config_path: str):
@@ -45,13 +45,14 @@ class RAGEvaluator:
                 model_cfg = system['openai']
 
                 # 使用可替换上传器
-                default_uploader(file_path, filename, system)
+                if not system.get("skip_upload", False):
+                    default_uploader(file_path, filename, system)
 
                 for qa in qa_pairs:
                     q = qa['question']
                     a = qa['answer']
 
-                    res = requests.post(rag_cfg['search_url'], json={"query": q})
+                    res = requests.get(rag_cfg['search_url'], json={"query": q})
                     res.raise_for_status()
                     search_results = res.json()
                     chunks = search_results[:5] if isinstance(search_results, list) else search_results.get('results', [])[:5]

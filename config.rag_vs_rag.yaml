@@ -9,25 +9,33 @@ questions_per_doc: 10
 
 systems:
   - name: "RAG-Qdrant"
+    skip_upload: true
     openai:
       model: "gpt-4o"
-      api_key: "your-openai-api-key"
+      api_key: ""
       base_url: "https://api.openai.com/v1"
     rag:
-      upload_url: "http://localhost:8081/upload"
-      search_url: "http://localhost:8081/search"
+      # upload_url: "http://localhost:5261/api/KnowledgeBase/uploadpublic"
+      upload_url: ""
+      search_url: "http://localhost:5261/api/KnowledgeBase/searchpublic"
       text_field: "text"
+      api_token: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6ImRiM2I3NjQwLTQ2ZmMtNGEwOC1hMzk0LTJkZjM1NDgwNjE4NyIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL25hbWUiOiJhZG1pbkBpdmlsc29uLmNvbSIsIk5pY2tuYW1lIjoiIiwiaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS93cy8yMDA4LzA2L2lkZW50aXR5L2NsYWltcy9yb2xlIjoiQWRtaW4iLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9tb2JpbGVwaG9uZSI6IjE4MTA3NzE4MDU1IiwiZXhwIjoxNzQ0NzU5NTU3LCJpc3MiOiJpdmlsc29uLmNvbSIsImF1ZCI6Iml2aWxzb25HUFQifQ.Y22kj25zPaF34Q_mrl0gSzwka6d6Ir7gYFjiy4B4Ma8"
       extra_fields:
-        tags: "示例标签"
+        name: 演示
+        limit: 5
 
   - name: "RAG-Faiss"
+    skip_upload: true
     openai:
       model: "gpt-4o"
-      api_key: "your-openai-api-key"
+      api_key: ""
       base_url: "https://api.openai.com/v1"
     rag:
-      upload_url: "http://localhost:8082/upload"
-      search_url: "http://localhost:8082/search"
+      # upload_url: "http://localhost:5261/api/KnowledgeBase/v1/uploadpublic"
+      upload_url: ""
+      search_url: "http://localhost:5261/api/KnowledgeBase/v1/searchpublic"
       text_field: "text"
+      api_token: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6ImRiM2I3NjQwLTQ2ZmMtNGEwOC1hMzk0LTJkZjM1NDgwNjE4NyIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL25hbWUiOiJhZG1pbkBpdmlsc29uLmNvbSIsIk5pY2tuYW1lIjoiIiwiaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS93cy8yMDA4LzA2L2lkZW50aXR5L2NsYWltcy9yb2xlIjoiQWRtaW4iLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9tb2JpbGVwaG9uZSI6IjE4MTA3NzE4MDU1IiwiZXhwIjoxNzQ0NzU5NTU3LCJpc3MiOiJpdmlsc29uLmNvbSIsImF1ZCI6Iml2aWxzb25HUFQifQ.Y22kj25zPaF34Q_mrl0gSzwka6d6Ir7gYFjiy4B4Ma8"
       extra_fields:
-        tags: "另一个系统标签"
+        name: demo
+        limit: 5
