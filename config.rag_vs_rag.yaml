@@ -1,0 +1,33 @@
+# config.rag_vs_rag.yaml
+
+mode: "rag-vs-rag"  # 使用相同模型评估多个不同 RAG 系统的检索效果
+standard_model: "GPT-4o"  # 在该模式中不会使用，但为结构统一保留
+
+input_dir: "./texts"
+output_dir: "./reports/rag_vs_rag"
+questions_per_doc: 10
+
+systems:
+  - name: "RAG-Qdrant"
+    openai:
+      model: "gpt-4o"
+      api_key: "your-openai-api-key"
+      base_url: "https://api.openai.com/v1"
+    rag:
+      upload_url: "http://localhost:8081/upload"
+      search_url: "http://localhost:8081/search"
+      text_field: "text"
+      extra_fields:
+        tags: "示例标签"
+
+  - name: "RAG-Faiss"
+    openai:
+      model: "gpt-4o"
+      api_key: "your-openai-api-key"
+      base_url: "https://api.openai.com/v1"
+    rag:
+      upload_url: "http://localhost:8082/upload"
+      search_url: "http://localhost:8082/search"
+      text_field: "text"
+      extra_fields:
+        tags: "另一个系统标签"

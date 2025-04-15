@@ -1,0 +1,33 @@
+# config.model_vs_model.yaml
+
+mode: "model-vs-model"  # 比较不同模型在相同 RAG 内容下的判断能力
+standard_model: "GPT-4o"  # 用于生成标准问题与标准答案的基准模型
+
+input_dir: "./texts"
+output_dir: "./reports/model_vs_model"
+questions_per_doc: 10
+
+systems:
+  - name: "GPT-4o"
+    openai:
+      model: "gpt-4o"
+      api_key: "your-openai-api-key"
+      base_url: "https://api.openai.com/v1"
+    rag:
+      upload_url: "http://localhost:8000/upload"
+      search_url: "http://localhost:8000/search"
+      text_field: "text"
+      extra_fields:
+        tags: "默认标签"
+
+  - name: "Claude-3"
+    openai:
+      model: "claude-3-opus"
+      api_key: "your-claude-api-key"
+      base_url: "https://api.anthropic.com/v1"
+    rag:
+      upload_url: "http://localhost:8000/upload"
+      search_url: "http://localhost:8000/search"
+      text_field: "text"
+      extra_fields:
+        tags: "模型对比标签"

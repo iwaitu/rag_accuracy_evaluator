@@ -1,0 +1,22 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.env
+.venv
+
+# Jupyter & VSCode
+.ipynb_checkpoints/
+.vscode/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Output
+reports/
+accuracy_chart.png
+rag_accuracy_report.html
+
+# Logs
+*.log

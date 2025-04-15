@@ -1,0 +1,43 @@
+[
+    {
+      "system": "RAG-Qdrant",
+      "filename": "doc1.txt",
+      "question": "居民身份证的签发机关是哪类机构？",
+      "standard_answer": "公安机关",
+      "rag_summary_answer": "由公安机关签发",
+      "llm_judgment": "是",
+      "cosine_score": 0.97,
+      "final_score": 1.0
+    },
+    {
+      "system": "RAG-Faiss",
+      "filename": "doc1.txt",
+      "question": "居民身份证的签发机关是哪类机构？",
+      "standard_answer": "公安机关",
+      "rag_summary_answer": "身份证由国家颁发",
+      "llm_judgment": "否",
+      "cosine_score": 0.62,
+      "final_score": 0.0
+    },
+    {
+      "system": "RAG-Qdrant",
+      "filename": "doc1.txt",
+      "question": "身份证遗失后应该怎么办？",
+      "standard_answer": "向公安机关补领或换领",
+      "rag_summary_answer": "应尽快补办身份证",
+      "llm_judgment": "是",
+      "cosine_score": 0.82,
+      "final_score": 1.0
+    },
+    {
+      "system": "RAG-Faiss",
+      "filename": "doc1.txt",
+      "question": "身份证遗失后应该怎么办？",
+      "standard_answer": "向公安机关补领或换领",
+      "rag_summary_answer": "应尽快向有关部门补发",
+      "llm_judgment": "否",
+      "cosine_score": 0.78,
+      "final_score": 0.5
+    }
+  ]
+  

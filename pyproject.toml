@@ -1,0 +1,22 @@
+[project]
+name = "rag-accuracy-evaluator"
+version = "0.1.0"
+description = "RAG 检索准确率评估工具，支持多个模型与多个 RAG 系统的横向对比"
+authors = [
+    { name="Rafael Luo", email="you@example.com" }
+]
+requires-python = ">=3.8"
+dependencies = [
+    "requests",
+    "pyyaml",
+    "matplotlib",
+    "jinja2",
+    "scikit-learn"
+]
+
+[project.scripts]
+rag-eval = "rag_accuracy_evaluator.__main__:main"
+
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
